@@ -28,7 +28,7 @@ const Weather = () => {
       .then(response => response.json())
       .then(data => {
         if (data.main) {
-          setTemp(data.main.temp);
+          setTemp(data.main.emp);
           setWindSpeed(data.wind.speed);
           setWeatherCondition(data.weather[0].description);
           setSunrise(new Date(data.sys.sunrise * 1000).toLocaleTimeString());
