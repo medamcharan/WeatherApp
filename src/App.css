@@ -1,23 +1,41 @@
+
 .App {
   text-align: center;
- 
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100vh;
 }
-.bg{
-  background-image:url(../public/bg.avif) ;
+.bg {
+  background-color: black;
+  background-image: url(../public/galaxy-night-landscape.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%; /* This ensures the background covers the entire viewport height */
-  margin: 0; /* Remove default body margin */
-
+  height: 100%;
+  margin: 0;
+  background-position: center top; /* Moves the background image towards the top */
+  background-position: 50% -100px;
+  position: relative;
+  z-index: 0;
 }
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .bg {
+    background-position: center center; /* Adjust the background position for mobile */
+    background-size: cover; /* Ensure the background image covers the screen */
+    height: 130vh; /* Set height to 100% of the viewport on mobile */
+  }
+}
+
 
 .weather-app {
   padding: 20px;
 }
 
 .form {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,11 +43,17 @@
 }
 
 .input {
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
-  width: 200px;
+  width: 250px;
   margin-right: 10px;
+  transition: all 0.3s ease; /* Smooth transition effect */
+  border-radius: 50px;
+}
 
+.input:hover {
+  border: 1px solid lightgray; /* Light border on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow effect */
 }
 
 .submit-btn {
@@ -39,9 +63,15 @@
   color: white;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition effect */
+  border-radius: 50px;
 }
 
-.grid-container {
+.submit-btn:hover {
+  border: 1px solid lightgray; /* Light border on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow effect */
+}
+-container {
   display: flex;
   justify-content: space-between;
 }

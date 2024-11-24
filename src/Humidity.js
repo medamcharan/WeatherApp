@@ -8,10 +8,10 @@ import HumidityIcon from '@mui/icons-material/Opacity';
 const Humidity = ({ humidity }) => (
   <Grid item xs={4}>
     <Card sx={{ width: '250%', backgroundColor: 'transparent', boxShadow: 'none' }}>
-      <CardContent>
+      <CardContent sx={{ color: 'white' }}>
         <HumidityIcon />
-        <Typography variant="body2" color="textSecondary" component="p">
-          Humidity: {humidity !== null ? `${humidity}%` : "Fetching humidity..."}
+        <Typography variant="body2"  color="white" component="p">
+          Humidity: {humidity !== null ? `${humidity}%` : "..."}
         </Typography>
       </CardContent>
     </Card>

@@ -8,10 +8,10 @@ import CoordinatesIcon from '@mui/icons-material/Room';
 const Coordinates = ({ lon, lat }) => (
   <Grid item xs={4}>
     <Card sx={{ width: '250%', backgroundColor: 'transparent', boxShadow: 'none' }}>
-      <CardContent>
+      <CardContent sx={{ color: 'white' }}>  {/* Set text color to white */}
         <CoordinatesIcon />
-        <Typography variant="body2" color="textSecondary" component="p">
-          Coordinates: {lon !== null && lat !== null ? `${lon}, ${lat}` : "Fetching coordinates..."}
+        <Typography variant="body2" color="white" component="p">  {/* Set Typography text color to white */}
+          Coordinates: {lon !== null && lat !== null ? `${lon}, ${lat}` : "..."}
         </Typography>
       </CardContent>
     </Card>

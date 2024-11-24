@@ -8,10 +8,10 @@ import WeatherIcon from '@mui/icons-material/WbSunny';
 const WeatherCondition = ({ weatherCondition }) => (
   <Grid item xs={4}>
     <Card sx={{ width: '250%', backgroundColor: 'transparent', boxShadow: 'none' }}>
-      <CardContent>
+      <CardContent sx={{ color: 'white' }}>
         <WeatherIcon />
-        <Typography variant="body2" color="textSecondary" component="p">
-          Condition: {weatherCondition !== "" ? weatherCondition : "Fetching weather condition..."}
+        <Typography variant="body2" color='white'  component="p">
+          Condition: {weatherCondition !== "" ? weatherCondition : "..."}
         </Typography>
       </CardContent>
     </Card>

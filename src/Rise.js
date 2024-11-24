@@ -9,14 +9,14 @@ import SunsetIcon from '@mui/icons-material/Brightness6';
 const SunriseSunset = ({ sunrise, sunset }) => (
   <Grid item xs={4}>
     <Card sx={{ width: '250%', backgroundColor: 'transparent', boxShadow: 'none' }}>
-      <CardContent>
+      <CardContent sx={{ color: 'white' }}>
         <SunriseIcon />
-        <Typography variant="body2" color="textSecondary" component="p">
-          Sunrise: {sunrise !== null ? sunrise : "Fetching sunrise time..."}
+        <Typography variant="body2" color='white' component="p">
+          Sunrise: {sunrise !== null ? sunrise : "..."}
         </Typography>
         <SunsetIcon />
-        <Typography variant="body2" color="textSecondary" component="p">
-          Sunset: {sunset !== null ? sunset : "Fetching sunset time..."}
+        <Typography variant="body2" color='white' component="p">
+          Sunset: {sunset !== null ? sunset : "..."}
         </Typography>
       </CardContent>
     </Card>

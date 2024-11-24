@@ -1,47 +1,70 @@
 .weather-app {
-    text-align: center;
-    padding: 20px;
-  }
+ margin-top: 5cm;
+  text-align: center;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .weather-app {
+    margin-top: 0cm;
+     text-align: center;
+     padding: 20px;
+   
+}}
+
+.form {
+ 
+  margin-bottom: 20px;
+  position: relative; /* Makes sure it can stack properly */
+  z-index: 5;
+}
+
+.input {
+  z-index: 10; /* High enough to stay above other elements */
+  position: relative; /* Required for z-index to work */
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.grid-container {
   
-  .form {
-    margin-bottom: 20px;
-  }
-  
-  .input {
-    padding: 10px;
-    margin-right: 10px;
-    font-size: 16px;
-  }
-  
-  .submit-btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .grid-container {
     margin-top: 20px;
-  }
-  
-  .grid-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    width: 100%;
-    max-width: 300px;
-    color: white;
-  }
-  
+  position: relative; /* Makes sure it doesn't interfere with other elements */
+}
+
+.grid-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Default 3D shadow */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 100%;
+  pointer-events: auto;
+  max-width: 300px;
+  color: white;
+  transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+/* Hover effect for glass-card */
+.glass-card:hover {
+  border: 1px solid #fff; /* Light border */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Stronger 3D shadow on hover */
+  transform: translateY(-5px); /* 3D effect for card movement */
+}

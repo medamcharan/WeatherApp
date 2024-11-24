@@ -28,7 +28,7 @@ const Weather = () => {
       .then(response => response.json())
       .then(data => {
         if (data.main) {
-          setTemp(data.main.emp);
+          setTemp(data.main.temp);
           setWindSpeed(data.wind.speed);
           setWeatherCondition(data.weather[0].description);
           setSunrise(new Date(data.sys.sunrise * 1000).toLocaleTimeString());
@@ -37,12 +37,12 @@ const Weather = () => {
           setCoordinates({ lon: data.coord.lon, lat: data.coord.lat });
         } else {
           setTemp("City not found");
-          setWindSpeed(null);
-          setWeatherCondition("");
-          setSunrise(null);
-          setSunset(null);
-          setHumidity(null);
-          setCoordinates({ lon: null, lat: null });
+          setWindSpeed("City not found");
+          setWeatherCondition("City not found");
+          setSunrise("City not found");
+          setSunset("City not found");
+          setHumidity("City not found");
+          setCoordinates({ lon: "City not found" });
         }
       })
       .catch(error => {
@@ -61,9 +61,9 @@ const Weather = () => {
     <div className="weather-app">
       <form onSubmit={handleFormSubmit} className="form">
         <input
-          type='text'
-          value={city}
-          placeholder='Enter city'
+          type="text"
+          value={city} // Bind the value to the city state
+          placeholder="Enter city"
           onChange={handleInputChange}
           className="input"
         />
@@ -74,32 +74,32 @@ const Weather = () => {
         />
       </form>
       <Grid container spacing={2} className="grid-container">
-        <Grid item xs={12} sm={4} lg={2} className="grid-item">
+        <Grid item xs={12} sm={6} md={4} lg={2} className="grid-item">
           <div className="glass-card">
             <Temperature temp={temp} />
           </div>
         </Grid>
-        <Grid item xs={12} sm={4} lg={2} className="grid-item">
+        <Grid item xs={12} sm={6} md={4} lg={2} className="grid-item">
           <div className="glass-card">
             <WindSpeed windSpeed={windSpeed} />
           </div>
         </Grid>
-        <Grid item xs={12} sm={4} lg={2} className="grid-item">
+        <Grid item xs={12} sm={6} md={4} lg={2} className="grid-item">
           <div className="glass-card">
             <WeatherCondition weatherCondition={weatherCondition} />
           </div>
         </Grid>
-        <Grid item xs={12} sm={4} lg={2} className="grid-item">
+        <Grid item xs={12} sm={6} md={4} lg={2} className="grid-item">
           <div className="glass-card">
             <SunriseSunset sunrise={sunrise} sunset={sunset} />
           </div>
         </Grid>
-        <Grid item xs={12} sm={4} lg={2} className="grid-item">
+        <Grid item xs={12} sm={6} md={4} lg={2} className="grid-item">
           <div className="glass-card">
             <Humidity humidity={humidity} />
           </div>
         </Grid>
-        <Grid item xs={12} sm={4} lg={2} className="grid-item">
+        <Grid item xs={12} sm={6} md={4} lg={2} className="grid-item">
           <div className="glass-card">
             <Coordinates lon={coordinates.lon} lat={coordinates.lat} />
           </div>
